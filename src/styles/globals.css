@@ -1,7 +1,9 @@
 body {
-  font-family: var(--font-family);
-  color: var(--color-dark);
   background-color: var(--color-background);
+  color: var(--color-dark);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
   line-height: 1.5;
 }
 
@@ -9,7 +11,60 @@ body {
   min-height: 100vh;
 }
 
+/* ========================================
+   CONTAINER
+======================================== */
+
 .container {
-  width: min(100% - 32px, var(--container-width));
+  width: min(
+    calc(100% - (var(--container-padding) * 2)),
+    var(--container-width)
+  );
+
   margin-inline: auto;
+}
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.section {
+  padding-block: var(--space-16);
+}
+
+.section-header {
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.section-title {
+  color: var(--color-dark);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.section-description {
+  margin-top: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .container {
+    width: min(calc(100% - (var(--space-4) * 2)), var(--container-width));
+  }
+
+  .section {
+    padding-block: var(--space-12);
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
 }

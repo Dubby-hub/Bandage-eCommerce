@@ -1,7 +1,9 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -10,9 +12,12 @@ html {
 
 body {
   min-width: 320px;
+  min-height: 100vh;
 }
 
-img {
+img,
+picture,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -25,10 +30,30 @@ select {
 }
 
 button {
+  border: 0;
+  background: none;
   cursor: pointer;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.5;
 }
