@@ -68,3 +68,12 @@ body {
   flex-wrap: wrap;
   gap: var(--space-4);
 }
+
+.icon-test {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+
+  color: var(--color-primary);
+}

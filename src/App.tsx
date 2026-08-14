@@ -1,28 +1,22 @@
-import Button from "./components/Button/Button";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <main className="container">
-      <section className="section">
-        <div className="section-header">
-          <h1 className="section-title">Bandage</h1>
+    <>
+      <Header />
 
-          <p className="section-description">E-commerce application</p>
-        </div>
+      <main>
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <h1 className="section-title">Bandage</h1>
 
-        <div className="button-group">
-          <Button>Shop Now</Button>
-
-          <Button variant="secondary">Learn More</Button>
-
-          <Button variant="outline">View Products</Button>
-
-          <Button disabled>Disabled</Button>
-
-          <Button type="submit">Submit</Button>
-        </div>
-      </section>
-    </main>
+              <p className="section-description">E-commerce application</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
