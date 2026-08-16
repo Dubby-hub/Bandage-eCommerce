@@ -1,0 +1,146 @@
+.footer {
+  background-color: var(--color-white);
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 40px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer__logo {
+  margin: 0;
+
+  color: var(--color-dark);
+
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 1.5fr;
+  gap: 30px;
+
+  padding-block: 50px;
+}
+
+.footer__column-title {
+  margin: 0 0 20px;
+
+  color: var(--color-dark);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer__links a {
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
+
+.footer__form {
+  display: flex;
+
+  width: 100%;
+}
+
+.footer__form input {
+  min-width: 0;
+  flex: 1;
+
+  padding: 12px;
+
+  border: 1px solid var(--color-border);
+  border-right: none;
+
+  font: inherit;
+}
+
+.footer__form button {
+  padding: 12px 18px;
+
+  color: var(--color-white);
+  background-color: var(--color-primary);
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.footer__newsletter-text {
+  margin-top: 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+}
+
+.footer__bottom {
+  padding-block: 25px;
+
+  background-color: var(--color-light);
+}
+
+.footer__bottom p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 767px) {
+  .footer__top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 25px;
+  }
+
+  .footer__newsletter {
+    grid-column: 1 / -1;
+  }
+
+  .footer__form {
+    max-width: 100%;
+  }
+}

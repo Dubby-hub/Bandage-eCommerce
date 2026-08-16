@@ -1,0 +1,17 @@
+export interface Product {
+  id: number;
+  title: string;
+  category: string;
+
+  image: string;
+  hoverImage?: string;
+
+  price: number;
+  originalPrice?: number;
+
+  rating: number;
+  reviewCount: number;
+
+  isInStock: boolean;
+  discount?: number;
+}
