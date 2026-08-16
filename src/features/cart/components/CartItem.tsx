@@ -18,27 +18,17 @@ function CartItem({ item }: CartItemProps) {
 
   return (
     <article className="cart-item">
-      <img
-       src={item.image}
-        alt={item.title}
-        className="cart-item__image"
-      />
+      <img src={item.image} alt={item.title} className="cart-item__image" />
 
       <div className="cart-item__details">
-        <h3 className="cart-item__title">
-          {item.title}
-        </h3>
+        <h3 className="cart-item__title">{item.title}</h3>
 
-        <p className="cart-item__price">
-          ${item.price.toFixed(2)}
-        </p>
+        <p className="cart-item__price">${item.price.toFixed(2)}</p>
 
         <div className="cart-item__quantity">
           <button
             type="button"
-            onClick={() =>
-              dispatch(decreaseQuantity(item.id))
-            }
+            onClick={() => dispatch(decreaseQuantity(item.id))}
             aria-label={`Decrease quantity of ${item.title}`}
           >
             −
@@ -48,9 +38,7 @@ function CartItem({ item }: CartItemProps) {
 
           <button
             type="button"
-            onClick={() =>
-              dispatch(increaseQuantity(item.id))
-            }
+            onClick={() => dispatch(increaseQuantity(item.id))}
             aria-label={`Increase quantity of ${item.title}`}
           >
             +
@@ -60,9 +48,7 @@ function CartItem({ item }: CartItemProps) {
         <button
           type="button"
           className="cart-item__remove"
-          onClick={() =>
-            dispatch(removeFromCart(item.id))
-          }
+          onClick={() => dispatch(removeFromCart(item.id))}
         >
           Remove
         </button>

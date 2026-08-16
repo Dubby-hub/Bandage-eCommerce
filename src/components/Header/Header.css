@@ -22,14 +22,14 @@
   justify-content: space-between;
 
   min-height: 40px;
-}
 
+  font-size: 12px;
+}
 .header-contact {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 20px;
 }
-
 .header-contact a {
   transition: opacity var(--transition-fast);
 }
@@ -54,34 +54,43 @@
 
 .navbar {
   background-color: var(--color-white);
+  margin: 0, 20px, 0, 20px;
 }
 
 .navbar__content {
   display: flex;
   align-items: center;
-  min-height: 80px;
-}
 
+  min-height: 80px;
+
+  width: 100%;
+}
 .navbar__logo {
   flex-shrink: 0;
 
   color: var(--color-dark);
-  font-size: var(--font-size-lg);
+  font-size: 24px;
   font-weight: var(--font-weight-bold);
+
+  white-space: nowrap;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: 32px;
 
-  margin-left: var(--space-12);
+  margin-left: 70px;
+
+  flex-shrink: 0;
 }
 
 .navbar__link {
   color: var(--color-text);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+
+  white-space: nowrap;
 
   transition: color var(--transition-fast);
 }
@@ -89,7 +98,17 @@
 .navbar__link:hover {
   color: var(--color-primary);
 }
+.navbar__link {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
 
+  transition: color var(--transition-fast);
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+}
 /* ========================================
    NAVIGATION ACTIONS
 ======================================== */
@@ -97,19 +116,25 @@
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 18px;
 
   margin-left: auto;
+
+  flex-shrink: 0;
 }
 
 .navbar__auth {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 6px;
+
+  white-space: nowrap;
 
   color: var(--color-primary);
-  font-size: var(--font-size-sm);
+  font-size: 14px;
   font-weight: var(--font-weight-semibold);
+
+  flex-shrink: 0;
 }
 
 .navbar__icon-button {
@@ -120,8 +145,14 @@
   width: 32px;
   height: 32px;
 
+  padding: 0;
+  border: none;
+  background: transparent;
+
   color: var(--color-primary);
   border-radius: var(--radius-full);
+
+  flex-shrink: 0;
 
   transition:
     background-color var(--transition-fast),
@@ -132,27 +163,6 @@
   background-color: var(--color-background-light);
   color: var(--color-primary-dark);
 }
-
-.navbar__icon-button:hover {
-  color: var(--color-primary-dark);
-}
-
-/* ========================================
-   MOBILE MENU BUTTON
-======================================== */
-
-.navbar__menu-button {
-  display: none;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 40px;
-  height: 40px;
-
-  color: var(--color-dark);
-}
-
 /* ========================================
    MOBILE MENU
 ======================================== */
@@ -164,7 +174,6 @@
 /* ========================================
    MOBILE
 ======================================== */
-
 @media (max-width: 767px) {
   .header-topbar {
     display: none;
@@ -182,6 +191,8 @@
   .navbar__actions {
     margin-left: auto;
     margin-right: var(--space-2);
+
+    gap: 8px;
   }
 
   .navbar__actions .navbar__icon-button:first-of-type {
@@ -194,7 +205,7 @@
   }
 
   .navbar__menu-button {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 
   .mobile-menu {
@@ -228,7 +239,11 @@
 .header-topbar__social {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 10px;
+}
+
+.header-topbar__social span {
+  margin-right: 4px;
 }
 
 .header-topbar__social-link {
@@ -266,15 +281,15 @@
 .header__cart-count {
   position: absolute;
 
-  top: -8px;
-  right: -10px;
+  top: -5px;
+  right: -7px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 18px;
-  height: 18px;
+  min-width: 17px;
+  height: 17px;
 
   padding: 0 4px;
 
@@ -283,7 +298,27 @@
   background-color: var(--color-primary);
   color: var(--color-white);
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   line-height: 1;
+}
+
+/* ========================================
+   DESKTOP HEADER FIX
+======================================== */
+
+@media (min-width: 768px) {
+  .navbar__menu-button {
+    display: none !important;
+  }
+
+  .navbar__content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header-topbar__content {
+    max-width: 1240px;
+  }
 }

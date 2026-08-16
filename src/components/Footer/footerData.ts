@@ -6,21 +6,11 @@ export interface FooterColumn {
 export const footerColumns: FooterColumn[] = [
   {
     title: "Company Info",
-    links: [
-      "About Us",
-      "Career",
-      "We are hiring",
-      "Blog",
-    ],
+    links: ["About Us", "Career", "We are hiring", "Blog"],
   },
   {
     title: "Legal",
-    links: [
-      "About Us",
-      "Career",
-      "We are hiring",
-      "Blog",
-    ],
+    links: ["About Us", "Career", "We are hiring", "Blog"],
   },
   {
     title: "Features",
@@ -33,11 +23,6 @@ export const footerColumns: FooterColumn[] = [
   },
   {
     title: "Resources",
-    links: [
-      "iOS & Android",
-      "Watch a Demo",
-      "Customers",
-      "API",
-    ],
+    links: ["iOS & Android", "Watch a Demo", "Customers", "API"],
   },
 ];

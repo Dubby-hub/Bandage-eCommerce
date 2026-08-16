@@ -1,9 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 
-import {
-  selectCartItemCount,
-  selectCartTotal,
-} from "../cartSelectors";
+import { selectCartItemCount, selectCartTotal } from "../cartSelectors";
 
 import { clearCart } from "../cartSlice";
 
@@ -17,9 +14,7 @@ function CartSummary() {
 
   return (
     <aside className="cart-summary">
-      <h2 className="cart-summary__title">
-        Cart Summary
-      </h2>
+      <h2 className="cart-summary__title">Cart Summary</h2>
 
       <div className="cart-summary__row">
         <span>Items</span>
@@ -29,15 +24,10 @@ function CartSummary() {
       <div className="cart-summary__row cart-summary__total">
         <span>Total</span>
 
-        <span>
-          ${cartTotal.toFixed(2)}
-        </span>
+        <span>${cartTotal.toFixed(2)}</span>
       </div>
 
-      <button
-        type="button"
-        className="cart-summary__checkout"
-      >
+      <button type="button" className="cart-summary__checkout">
         CHECKOUT
       </button>
 

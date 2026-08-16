@@ -104,12 +104,10 @@ export const products: Product[] = [
     id: 10,
     title: "Graphic Design",
     category: "English Department",
-     image: "/products/product-10.png",
+    image: "/products/product-10.png",
     hoverImage: "/products/product-10.png",
     price: 16.48,
     rating: 4,
     reviewCount: 54,
   },
 ];
-
-

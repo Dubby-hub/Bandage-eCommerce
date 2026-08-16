@@ -100,20 +100,18 @@ function Header() {
               <Icon name="search" size={18} />
             </button>
 
-         <button
-  type="button"
-  className="header__cart"
-  aria-label={`Shopping cart with ${cartItemCount} items`}
-  onClick={() => navigate("/cart")}
->
-  <Icon name="cart" />
+            <button
+              type="button"
+              className="header__cart"
+              aria-label={`Shopping cart with ${cartItemCount} items`}
+              onClick={() => navigate("/cart")}
+            >
+              <Icon name="cart" size={18} />
 
-  {cartItemCount > 0 && (
-    <span className="header__cart-count">
-      {cartItemCount}
-    </span>
-  )}
-</button>
+              {cartItemCount > 0 && (
+                <span className="header__cart-count">{cartItemCount}</span>
+              )}
+            </button>
 
             <button
               type="button"

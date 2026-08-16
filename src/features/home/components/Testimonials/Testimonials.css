@@ -1,12 +1,13 @@
 .testimonials {
   padding-block: 80px;
   background-color: var(--color-white);
+  justify-self: center;
+  text-align: center;
 }
 
 .testimonials__layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
 
   min-height: 500px;
 }
@@ -30,7 +31,8 @@
 
   margin-bottom: 25px;
 
-  color: var(--color-primary);
+  color: var(--color-warning);
+  justify-self: center;
 }
 
 .testimonial__review {
@@ -42,9 +44,8 @@
 }
 
 .testimonial__customer {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  margin: 0, 50px, 0, 50px;
+  justify-self: center;
 }
 
 .testimonial__avatar {
@@ -53,7 +54,7 @@
 
   border-radius: 50%;
 
-  object-fit: cover;
+  margin: 0, 50px, 0, 50px;
 }
 
 .testimonial__name {

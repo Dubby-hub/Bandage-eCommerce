@@ -1,7 +1,4 @@
-import {
-  createSlice,
-  type PayloadAction,
-} from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 import type { Product } from "../../types/product";
 import type { CartState } from "./types";
@@ -16,15 +13,10 @@ const cartSlice = createSlice({
   initialState,
 
   reducers: {
-    addToCart: (
-      state,
-      action: PayloadAction<Product>
-    ) => {
+    addToCart: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
 
-      const existingItem = state.items.find(
-        (item) => item.id === product.id
-      );
+      const existingItem = state.items.find((item) => item.id === product.id);
 
       if (existingItem) {
         existingItem.quantity += 1;
@@ -36,35 +28,20 @@ const cartSlice = createSlice({
       }
     },
 
-    removeFromCart: (
-      state,
-      action: PayloadAction<number>
-    ) => {
-      state.items = state.items.filter(
-        (item) => item.id !== action.payload
-      );
+    removeFromCart: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
-    increaseQuantity: (
-      state,
-      action: PayloadAction<number>
-    ) => {
-      const item = state.items.find(
-        (item) => item.id === action.payload
-      );
+    increaseQuantity: (state, action: PayloadAction<number>) => {
+      const item = state.items.find((item) => item.id === action.payload);
 
       if (item) {
         item.quantity += 1;
       }
     },
 
-    decreaseQuantity: (
-      state,
-      action: PayloadAction<number>
-    ) => {
-      const item = state.items.find(
-        (item) => item.id === action.payload
-      );
+    decreaseQuantity: (state, action: PayloadAction<number>) => {
+      const item = state.items.find((item) => item.id === action.payload);
 
       if (!item) {
         return;

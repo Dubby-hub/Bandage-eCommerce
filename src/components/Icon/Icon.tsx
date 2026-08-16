@@ -15,7 +15,10 @@ export type IconName =
   | "twitter"
   | "close"
   | "share"
-  | "star";
+  | "star"
+  | "open-book"
+  | "growth"
+  | "textbook";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;
@@ -93,19 +96,71 @@ function Icon({ name, size = 24, className = "", ...props }: IconProps) {
     ),
 
     share: (
-  <>
-    <circle cx="18" cy="5" r="2" />
-    <circle cx="6" cy="12" r="2" />
-    <circle cx="18" cy="19" r="2" />
-    <path d="m8 11 8-5" />
-    <path d="m8 13 8 5" />
-  </>
-),
+      <>
+        <circle cx="18" cy="5" r="2" />
+        <circle cx="6" cy="12" r="2" />
+        <circle cx="18" cy="19" r="2" />
+        <path d="m8 11 8-5" />
+        <path d="m8 13 8 5" />
+      </>
+    ),
+    "open-book": (
+      <>
+        {/* Reader's head */}
+        <circle cx="12" cy="4.5" r="1.5" fill="currentColor" stroke="none" />
 
-star: (
-  <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" />
-),
+        {/* Left side of open book */}
+        <path
+          d="M12 9.5C10.2 7.8 7.5 7 4 7v11c3.5 0 6.2.8 8 2.5"
+          fill="currentColor"
+        />
 
+        {/* Right side of open book */}
+        <path
+          d="M12 9.5C13.8 7.8 16.5 7 20 7v11c-3.5 0-6.2.8-8 2.5"
+          fill="currentColor"
+        />
+
+        {/* Center of the book */}
+        <path d="M12 9.5v11" />
+      </>
+    ),
+
+    growth: (
+      <>
+        <path d="M4 19 10 13l4 4 6-8" />
+        <path d="M15 9h5v5" />
+      </>
+    ),
+
+    textbook: (
+      <>
+        {/* Left page */}
+        <path d="M12 5.5C10.2 4.2 7.6 3.5 4 3.5v15c3.6 0 6.2.7 8 2" />
+
+        {/* Right page */}
+        <path d="M12 5.5C13.8 4.2 16.4 3.5 20 3.5v15c-3.6 0-6.2.7-8 2" />
+
+        {/* Center spine */}
+        <path d="M12 5.5v15" />
+
+        {/* Left page text */}
+        <path d="M6 7.5h3.5" />
+        <path d="M6 10h3.5" />
+        <path d="M6 12.5h3.5" />
+        <path d="M6 15h3.5" />
+
+        {/* Right page text */}
+        <path d="M14.5 7.5H18" />
+        <path d="M14.5 10H18" />
+        <path d="M14.5 12.5H18" />
+        <path d="M14.5 15H18" />
+      </>
+    ),
+
+    star: (
+      <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" />
+    ),
 
     close: (
       <>

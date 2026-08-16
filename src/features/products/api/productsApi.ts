@@ -27,9 +27,7 @@ export const productsApi = api.injectEndpoints({
     getProducts: builder.query<Product[], number | void>({
       query: (limit = 10) => `/products?limit=${limit}`,
 
-      transformResponse: (
-        response: ProductsResponse
-      ): Product[] => {
+      transformResponse: (response: ProductsResponse): Product[] => {
         return response.products.map((product) => ({
           id: product.id,
 
@@ -37,18 +35,15 @@ export const productsApi = api.injectEndpoints({
 
           category: product.category,
 
-          image:
-            product.images[0] ?? product.thumbnail,
+          image: product.images[0] ?? product.thumbnail,
 
-          hoverImage:
-            product.images[1] ?? product.thumbnail,
+          hoverImage: product.images[1] ?? product.thumbnail,
 
           price: product.price,
 
           originalPrice:
             product.discountPercentage > 0
-              ? product.price /
-                (1 - product.discountPercentage / 100)
+              ? product.price / (1 - product.discountPercentage / 100)
               : undefined,
 
           discount:
@@ -58,9 +53,7 @@ export const productsApi = api.injectEndpoints({
 
           rating: Math.round(product.rating),
 
-          reviewCount: Math.floor(
-            product.rating * 10
-          ),
+          reviewCount: Math.floor(product.rating * 10),
 
           isOutOfStock: product.stock === 0,
         }));
@@ -73,6 +66,4 @@ export const productsApi = api.injectEndpoints({
   overrideExisting: false,
 });
 
-export const {
-  useGetProductsQuery,
-} = productsApi;
+export const { useGetProductsQuery } = productsApi;

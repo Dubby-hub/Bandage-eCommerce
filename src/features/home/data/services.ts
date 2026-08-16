@@ -12,19 +12,19 @@ export const services: Service[] = [
     id: "easy-wins",
     title: "Easy Wins",
     description: "Get your best looking smile now!",
-    icon: "heart",
+    icon: "open-book",
   },
   {
     id: "concrete",
     title: "Concrete",
     description:
       "Defalcate is most focused in helping you discover your most beautiful smile",
-    icon: "user",
+    icon: "textbook",
   },
   {
     id: "hack-growth",
     title: "Hack Growth",
     description: "Overcome any hurdle on any or other problem.",
-    icon: "twitter",
+    icon: "growth",
   },
 ];
