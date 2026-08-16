@@ -2,7 +2,8 @@ import { useState } from "react";
 
 import Icon from "../Icon/Icon";
 import "./Header.css";
-
+import { useAppSelector } from "../../app/hooks";
+import { selectCartItemCount } from "../../features/cart/cartSelectors";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
@@ -14,6 +15,7 @@ const navLinks = [
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cartItemCount = useAppSelector(selectCartItemCount);
   return (
     <header className="site-header">
       <div className="header-topbar">
@@ -96,13 +98,19 @@ function Header() {
               <Icon name="search" size={18} />
             </button>
 
-            <button
-              type="button"
-              className="navbar__icon-button"
-              aria-label="Shopping cart"
-            >
-              <Icon name="cart" size={18} />
-            </button>
+           <button
+  type="button"
+  className="header__cart"
+  aria-label={`Shopping cart with ${cartItemCount} items`}
+>
+  <Icon name="cart" />
+
+  {cartItemCount > 0 && (
+    <span className="header__cart-count">
+      {cartItemCount}
+    </span>
+  )}
+</button>
 
             <button
               type="button"
